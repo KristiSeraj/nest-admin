@@ -37,11 +37,14 @@ export class RoleController {
     @Body('name') name: string,
     @Body('permissions') ids: number[],
   ) {
-    await this.roleService.update(id, {
-      name,
+    await this.roleService.update(id, { name });
+
+    const role = await this.roleService.findOne({ id });
+
+    return this.roleService.create({
+      ...role,
       permissions: ids.map((id) => ({ id })),
     });
-    return this.roleService.findOne({ id });
   }
 
   @Delete(':id')
