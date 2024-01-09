@@ -1,0 +1,7 @@
+node_modules/
+.idea
+.vscode
+.dbdata
+dist/
+.eslintrc.js
+.prettierrc
