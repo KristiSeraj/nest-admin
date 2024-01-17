@@ -25,8 +25,8 @@ export class UserController {
   constructor(private userService: UserService) {}
 
   @Get()
-  async all(@Query('page') page: number): Promise<User[]> {
-    return await this.userService.paginate(page);
+  async all(@Query('page') page = 1) {
+    return await this.userService.paginate(page, ['role']);
   }
 
   @Post()
