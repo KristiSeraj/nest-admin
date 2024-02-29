@@ -15,9 +15,9 @@ import { PermissionGuard } from './permission/permission.guard';
     UserModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'db',
+      host: 'localhost',
       port: 3306,
-      username: 'root',
+      username: 'nest',
       password: 'root',
       database: 'admin',
       autoLoadEntities: true,
